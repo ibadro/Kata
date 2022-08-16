@@ -1,7 +1,8 @@
-package Java0.String;
+package Java0.Стринг;
+
 import java.util.Scanner;
-public class Pz232 {
-    public static void main(String[] args) {
+public class Pz_2_3_2 {
+    public static void main( String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Как вас зовут?");
         String name = in.nextLine();

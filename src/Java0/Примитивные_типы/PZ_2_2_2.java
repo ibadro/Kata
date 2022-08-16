@@ -1,6 +1,6 @@
-package Java0;
+package Java0.Примитивные_типы;
 
-public class PZ2_2_2 {
+public class PZ_2_2_2 {
     public static void main(String[] args) {
         int varint=5;
         boolean varboolean = true;
