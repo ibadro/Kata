@@ -17,6 +17,7 @@ import java.math.BigInteger;
 4. Метод должен быть реализован через цикл.*/
 public class PZ_2_4_13 {
     public static void main(String[] args) {
+       // System.out.println(getfactorial(3));
         System.out.println(factorial(3));
     }
 
@@ -29,3 +30,13 @@ public class PZ_2_4_13 {
     }
 }
 
+    // Это константные объекты BigInteger со значениями, соответственно, 0, 1 и 10.
+   /* public static int factorial(int value) {
+        int result = 1;
+        for (int i = 1; i <= value; i++) {
+            result = result * i;
+        }
+        return result;
+    }
+}*/
+// BigInteger.valueOf(long value) возвращает BigInteger/  Этот метод является статическим, поэтому нет необходимости создавать объект класса BigInteger для использования этого метода. Мы можем вызвать эту функцию с помощью кода BigInteger.valueOf (длинное значение).

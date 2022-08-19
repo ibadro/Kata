@@ -17,11 +17,15 @@ class Macсивы_и_строки {
         System.out.println(isPalindrome("Was it a cat I saw"));
     }
     public static boolean isPalindrome(String text) {
-        return text.replaceAll("\\W", "")
-                .equalsIgnoreCase(new StringBuilder(text.replaceAll("\\W", ""))
+        return text.replaceAll("[^A-Za-zА-Яа-я0-9]", "")
+                .equalsIgnoreCase(new StringBuilder(text.replaceAll("[^A-Za-zА-Яа-я0-9]", ""))
                         .reverse().toString());
     }
 
     }
+//текст реплейсим регуляркой и сравниваем (игнорируя регистр) с объектом стринг билдера (в него кладем нашу строку) т.к. у него есть метод "реверс" и этот объект снова преобразуем в строку
 
-
+//\d, потому что мы хотим удалить все цифры во входной строке.
+//\W Любой символ, не являющийся словом
+//
+//

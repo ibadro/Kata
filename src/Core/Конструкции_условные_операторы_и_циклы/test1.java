@@ -1,23 +1,15 @@
 package Core.Конструкции_условные_операторы_и_циклы;
 
-public class test1 {
-    public static void main(String[] args) {
-        int minFromFour = getMinFromFour(14, 11, 10, 15);
-        System.out.println(minFromFour);
-    }
+public class test1  {
 
-    public static int getMinFromFour(int a, int b, int c, int d) {
-        int firstPairResult = getMinFromTwo(a, b);
-        int secondPairResult = getMinFromTwo(d, b);
-
-        return getMinFromTwo(firstPairResult, secondPairResult);
-    }
-
-    public static int getMinFromTwo(int a, int b) {
-        if (a > b) {
-            return b;
-        } else {
-            return a;
-        }
-    }
 }
+
+//        if (sadaf) {
+//            System.out.println("ld");
+//        } else {
+//            System.out.println("sdsf");
+//        }
+//        System.out.println(sadaf ? +(sdf ? "ld" : "sdsf"));
+
+
+   // }

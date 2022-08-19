@@ -6,28 +6,38 @@ package Core.Конструкции_условные_операторы_и_ци�
 
 Пример вывода: 3,5,7,3*/
 class PZ_2_4_16 {
-//    public static void main(String[] args) {
-//        int[] array = new int[]{3, 5, 20, 8, 7, 3, 100};
-//        printOddNumbers(array);
-//    }
-//
-//    public static void printOddNumbers(int[] arr) {
-//       // StringBuilder stringBuilder = new StringBuilder();
-//        boolean first = true;
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i] % 2 != 0) {
-//                if (first) {
-//                    stringBuilder.append(arr[i]);
-//                    first = false;
-//                } else {
-//                    stringBuilder.append("," + arr[i]);
-//                }
-//            }
-//        }
-//        System.out.println(stringBuilder);
-//            }
+    public static void main(String[] args) {
+        int[] array = new int[]{3, 5, 20, 8, 7, 3, 100};
+        printOddNumbers(array);
+    }
 
-        }
+    public static void printOddNumbers(int[] arr) {
+            String sp = ""; //пустой разделитель
+            for (int i = 0; i < arr.length; i++) {
+                    if (arr[i] % 2 != 0) {
+                            System.out.print(sp); //  разделитель пустой в начале, затем мы пишем sp = ", ";
+                            System.out.print(arr[i]);    // элемент массива
+                            sp = ",";            // разделитель с запятой
+                    }
+            }
+
+//                    StringBuilder stringBuilder = new StringBuilder();
+//                    boolean first = true;
+//                    for (int i = 0; i < arr.length; i++) {
+//                            if (arr[i] % 2 != 0) {
+//                                    if (first) {
+//                                            stringBuilder.append(arr[i]);
+//                                            first = false;
+//                                    } else {
+//                                            stringBuilder.append("," + arr[i]);
+//                                    }
+//                            }
+//                    }
+//                    System.out.println(stringBuilder);
+            }
+
+    }
+
 
 
 

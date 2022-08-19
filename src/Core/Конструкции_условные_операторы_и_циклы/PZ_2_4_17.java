@@ -21,17 +21,13 @@ public class PZ_2_4_17 {
         int m = a2.length;
         int i = 0, j = 0, k = 0;
         while (i < n && j < m) {
-            if (a1[i] <= a2[j]) {
-                res[k] = a1[i];
-                i++;
+            if (a1[i] <= a2[j]) {   res[k] = a1[i];  i++;
             } else {
-                res[k] = a2[j];
-                j++;
+                res[k] = a2[j];  j++;
             }
             k++;
         }
-        while (i < n) {
-            res[k] = a1[i];
+        while (i < n) {  res[k] = a1[i];
             i++;
             k++;
         }

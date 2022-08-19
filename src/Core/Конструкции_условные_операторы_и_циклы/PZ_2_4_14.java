@@ -15,7 +15,7 @@ import java.math.BigInteger;
 4. Реализация метода должна быть через рекурсию.*/
 public class PZ_2_4_14 {
     public static void main(String[] args) {
-        System.out.println(factorial(3));
+        System.out.println(factorial(-1));
     }
 
     public static BigInteger factorial(int value) {
