@@ -1,6 +1,5 @@
 package Core.Конструкции_условные_операторы_и_циклы;
 
-import java.util.Arrays;
 
 /*Реализуйте метод, сливающий два отсортированных по неубыванию массива чисел в один отсортированный в том же порядке массив. Массивы могут быть любой длины, в том числе нулевой.
 
@@ -13,18 +12,36 @@ import java.util.Arrays;
 Пример ввода: {0, 2, 2} и {1, 3}
 Пример вывода: {0, 1, 2, 2, 3}*/
 public class PZ_2_4_17 {
-    public static void main(String[] args) {
-        int [] a1 =  {0, 2, 2};
-        int [] a2 = {1, 3};
 
-    }
+
 
     public static int[] mergeArrays(int[] a1, int[] a2) {
-        int[] result = new int [a1.length + a2.length];
-        System.arraycopy(a1, 0, result, 0, a1.length);
-        System.arraycopy(a2, 0, result, a1.length, a2.length);
-        Arrays.sort(result);
-        return result;
+        int[] res = new int[a1.length + a2.length];
+        int n = a1.length;
+        int m = a2.length;
+        int i = 0, j = 0, k = 0;
+        while (i < n && j < m) {
+            if (a1[i] <= a2[j]) {
+                res[k] = a1[i];
+                i++;
+            } else {
+                res[k] = a2[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < n) {
+            res[k] = a1[i];
+            i++;
+            k++;
+        }
+        while (j < m) {
+            res[k] = a2[j];
+            j++;
+            k++;
+        }
+        return res;
     }
 }
+
 /*https://otvet.mail.ru/question/226808537*/
