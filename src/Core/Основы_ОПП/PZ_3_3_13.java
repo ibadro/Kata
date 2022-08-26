@@ -1,9 +1,11 @@
 package Core.Основы_ОПП;
+
 import java.math.*;
 import java.util.Arrays;
+
 public class PZ_3_3_13 {
     public static void main(String[] args) {
-        Robot robot = new Robot(10,10, Direction.UP);
+        Robot robot = new Robot(10, 10, Direction.UP);
         moveRobot(robot, 0, 0);
     }
 
@@ -19,37 +21,61 @@ public class PZ_3_3_13 {
         int y;
         Direction dir;
 
-        public Robot (int x, int y, Direction dir) {
+        public Robot(int x, int y, Direction dir) {
             this.x = x;
             this.y = y;
             this.dir = dir;
         }
 
-        public Direction getDirection() {return dir;}
+        public Direction getDirection() {
+            return dir;
+        }
 
-        public int getX() {return x;}
+        public int getX() {
+            return x;
+        }
 
-        public int getY() {return y;}
+        public int getY() {
+            return y;
+        }
 
         public void turnLeft() {
-            if      (dir == Direction.UP)    {dir = Direction.LEFT;}
-            else if (dir == Direction.DOWN)  {dir = Direction.RIGHT;}
-            else if (dir == Direction.LEFT)  {dir = Direction.DOWN;}
-            else if (dir == Direction.RIGHT) {dir = Direction.UP;}
+            if (dir == Direction.UP) {
+                dir = Direction.LEFT;
+            } else if (dir == Direction.DOWN) {
+                dir = Direction.RIGHT;
+            } else if (dir == Direction.LEFT) {
+                dir = Direction.DOWN;
+            } else if (dir == Direction.RIGHT) {
+                dir = Direction.UP;
+            }
         }
 
         public void turnRight() {
-            if      (dir == Direction.UP)    {dir = Direction.RIGHT;}
-            else if (dir == Direction.DOWN)  {dir = Direction.LEFT;}
-            else if (dir == Direction.LEFT)  {dir = Direction.UP;}
-            else if (dir == Direction.RIGHT) {dir = Direction.DOWN;}
+            if (dir == Direction.UP) {
+                dir = Direction.RIGHT;
+            } else if (dir == Direction.DOWN) {
+                dir = Direction.LEFT;
+            } else if (dir == Direction.LEFT) {
+                dir = Direction.UP;
+            } else if (dir == Direction.RIGHT) {
+                dir = Direction.DOWN;
+            }
         }
 
         public void stepForward() {
-            if (dir == Direction.UP)    {y++;}
-            if (dir == Direction.DOWN)  {y--;}
-            if (dir == Direction.LEFT)  {x--;}
-            if (dir == Direction.RIGHT) {x++;}
+            if (dir == Direction.UP) {
+                y++;
+            }
+            if (dir == Direction.DOWN) {
+                y--;
+            }
+            if (dir == Direction.LEFT) {
+                x--;
+            }
+            if (dir == Direction.RIGHT) {
+                x++;
+            }
         }
     }
 
@@ -57,7 +83,8 @@ public class PZ_3_3_13 {
         int dirX = robot.getX();
         int dirY = robot.getY();
 
-        System.out.println("Начальная позиция " + robot.getX() + " " + robot.getY() + ". Направление взгляда: " + robot.getDirection());
+        // System.out.println("Начальная позиция " + robot.getX() + " " + robot.getY() + ". Направление взгляда: "
+         //       + robot.getDirection());
 
         if (dirY >= toY) {
             while (robot.getDirection() != Direction.DOWN) {
@@ -65,7 +92,8 @@ public class PZ_3_3_13 {
             }
             while (dirY != toY) {
                 robot.stepForward();
-                System.out.println("dirY >= toY " + robot.getX() + " " + robot.getY() + ". Направление взгляда: " + robot.getDirection());
+//                System.out.println("dirY >= toY " + robot.getX() + " " + robot.getY() + ". Направление взгляда: "
+//                        + robot.getDirection());
                 dirY--;
             }
 
@@ -75,7 +103,8 @@ public class PZ_3_3_13 {
             }
             while (dirY != toY) {
                 robot.stepForward();
-                System.out.println("dirY <= toY " + robot.getX() + " " + robot.getY() + ". Направление взгляда: " + robot.getDirection());
+//                System.out.println("dirY <= toY " + robot.getX() + " " + robot.getY() + ". Направление взгляда: "
+//                        + robot.getDirection());
                 dirY++;
             }
         }
@@ -85,7 +114,8 @@ public class PZ_3_3_13 {
             }
             while (dirX != toX) {
                 robot.stepForward();
-                System.out.println("dirX >= toX " + robot.getX() + " " + robot.getY() + ". Направление взгляда: " + robot.getDirection());
+//                System.out.println("dirX >= toX " + robot.getX() + " " + robot.getY() + ". Направление взгляда: "
+//                        + robot.getDirection());
                 dirX--;
             }
         } else {
@@ -94,7 +124,8 @@ public class PZ_3_3_13 {
             }
             while (dirX != toX) {
                 robot.stepForward();
-                System.out.println("dirX <= toX " + robot.getX() + " " + robot.getY() + ". Направление взгляда: " + robot.getDirection());
+//                System.out.println("dirX <= toX " + robot.getX() + " " + robot.getY() + ". Направление взгляда: "
+//                        + robot.getDirection());
                 dirX++;
             }
         }
