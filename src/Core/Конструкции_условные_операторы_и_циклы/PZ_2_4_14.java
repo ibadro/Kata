@@ -15,7 +15,10 @@ import java.math.BigInteger;
 4. Реализация метода должна быть через рекурсию.*/
 public class PZ_2_4_14 {
     public static void main(String[] args) {
-        System.out.println(factorial(-1));
+        System.out.println(factorial(3));
+        factorial(45);
+        factorial(0);
+        factorial(20);
     }
 
     public static BigInteger factorial(int value) {
@@ -23,13 +26,10 @@ public class PZ_2_4_14 {
         if (value == 1 || value == 0) {
             return result;
         }
-        if (value < 0) {
-            return null;
-        } else {
-            BigInteger n1 = BigInteger.valueOf(value);
-            result = n1.multiply(factorial(value - 1));
-            return result;
-        }
+
+        result = factorial(value - 1).multiply(BigInteger.valueOf(value));
+        return result;
     }
 }
+
 

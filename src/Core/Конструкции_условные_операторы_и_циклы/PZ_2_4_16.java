@@ -12,13 +12,19 @@ class PZ_2_4_16 {
     }
 
     public static void printOddNumbers(int[] arr) {
-            String sp = ""; //пустой разделитель
-            for (int i = 0; i < arr.length; i++) {
-                    if (arr[i] % 2 != 0) {
-                            System.out.print(sp); //  разделитель пустой в начале, затем мы пишем sp = ", ";
-                            System.out.print(arr[i]);    // элемент массива
-                            sp = ",";            // разделитель с запятой
-                    }
+        StringBuilder stringBuilder = new StringBuilder();
+        boolean first = true;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                if (first) {
+                    stringBuilder.append(arr[i]);
+                    first = false;
+                } else {
+                    stringBuilder.append(",").append(arr[i]);
+                }
+            }
+        }
+        System.out.println(stringBuilder);
             }
 
 //                    StringBuilder stringBuilder = new StringBuilder();
@@ -36,7 +42,7 @@ class PZ_2_4_16 {
 //                    System.out.println(stringBuilder);
             }
 
-    }
+  //  }
 
 
 

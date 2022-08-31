@@ -1,4 +1,5 @@
 package Core.Конструкции_условные_операторы_и_циклы;
+
 /*Вам дан список ролей и сценарий пьесы в виде массива строчек. Каждая строчка сценария пьесы дана в следующем виде:
 Роль: текст
 Текст может содержать любые символы.
@@ -66,6 +67,7 @@ public class PZ_2_4_18 {
                 new String[]{"Городничий: Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.",
                         "Аммос Федорович: Как ревизор?",
                         "Аммос: Как ревизор?",
+                        "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.",
                         "Артемий Филиппович: Как ревизор?",
                         "Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.",
                         "Лука Лукич: Здравствуйте Городничий: Как вы поживаете?",
@@ -73,22 +75,23 @@ public class PZ_2_4_18 {
                         "Лука: Господи боже! еще и с секретным предписаньем!"})
         );
     }
+
     public static String printTextPerRole(String[] roles, String[] textLines) {
 
-            StringBuilder result = new StringBuilder();
-            for (int v=0; v<roles.length; v++) {
-                result.append(roles[v]).append(":").append('\n');
-                for (int z = 0; z < textLines.length; z++) {
-                    String str = textLines[z];
-                    if (str.startsWith(roles[v]+":")) {
-                        String str1= str.replaceFirst(roles[v]+":", String.valueOf(z+1) + ")");
-                        result.append(str1).append('\n');
-                    }
+        StringBuilder sb = new StringBuilder();
+        for (String role : roles) {
+            sb.append(role).append(":\n");
+            for (int i = 0; i < textLines.length; i++) {
+                if (textLines[i].startsWith(role + ":")) {
+                    sb.append(i + 1).append(")").append(textLines[i].substring(role.length() + 1)).append("\n");
                 }
-                result.append('\n');
             }
-            return String.valueOf(result);
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
+
 }
 //*1) Взять из списка ролей 1ю роль, сформировать строку вида Роль + : + \n
 //result.append(roles[i]+ ":" + "\n");

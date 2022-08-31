@@ -1,6 +1,6 @@
 package Core.Исключения.PZ426;
 
-/*public class BankEmployee implements BankWorker {
+public class BankEmployee implements BankWorker {
     @Override
     public boolean checkClientForCredit(BankClient client) throws BadCreditHistoryException, ProblemWithLawException{
         if (client.getCreditHistory().equalsIgnoreCase("bad"))
@@ -9,4 +9,4 @@ package Core.Исключения.PZ426;
             throw new ProblemWithLawException();
         else return true;
     }
-}*/
+}
